@@ -68,41 +68,41 @@ def register_network_tools(mcp, config):
     async def bgp_sessions(
         ctx: Context,
         hostname: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Filter by device hostname"),
         ] = None,
         asn: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Filter by local ASN"),
         ] = None,
         remote_asn: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Filter by remote ASN"),
         ] = None,
         remote_address: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Filter by remote IP address"),
         ] = None,
         local_address: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Filter by local IP address"),
         ] = None,
         bgp_descr: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Filter by BGP description (SQL LIKE)"),
         ] = None,
         bgp_state: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Filter by BGP state (e.g., established)"),
         ] = None,
         bgp_adminstate: Annotated[
-            str | None,
+            str,
             Field(
                 default=None, description="Filter by admin state (start, stop, running)"
             ),
         ] = None,
         bgp_family: Annotated[
-            int | None,
+            int,
             Field(
                 default=None,
                 description="Filter by address family: 4 (IPv4) or 6 (IPv6)",

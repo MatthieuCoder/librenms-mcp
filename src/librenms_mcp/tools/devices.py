@@ -29,7 +29,7 @@ def register_device_tools(mcp, config):
     async def devices_list(
         ctx: Context,
         query: Annotated[
-            dict | None,
+            dict,
             Field(
                 default=None,
                 description="""Query parameters for filtering devices. Examples:
@@ -245,7 +245,7 @@ Valid type values: all, active, ignored, up, down, disabled, os, mac, ipv4, ipv6
         ctx: Context,
         hostname: Annotated[str, Field(description="Device hostname or ID")],
         columns: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Comma-separated list of columns to return (e.g., 'port_id,ifName,ifAlias,ifOperStatus')",
@@ -577,7 +577,7 @@ Example dynamic group:
         ctx: Context,
         name: Annotated[str, Field(description="Device group name")],
         full: Annotated[
-            bool | None,
+            bool,
             Field(
                 default=None,
                 description="Set to true to get complete device data instead of just IDs",

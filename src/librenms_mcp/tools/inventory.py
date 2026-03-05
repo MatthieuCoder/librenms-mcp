@@ -29,14 +29,14 @@ def register_inventory_tools(mcp, config):
         ctx: Context,
         hostname: Annotated[str, Field(description="Device hostname or ID")],
         ent_physical_class: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Filter by entity physical class (e.g., chassis, module, port, powerSupply, fan, sensor)",
             ),
         ] = None,
         ent_physical_contained_in: Annotated[
-            int | None,
+            int,
             Field(
                 default=None,
                 description="Filter by parent entity index",

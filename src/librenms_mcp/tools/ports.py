@@ -27,7 +27,7 @@ def register_port_tools(mcp, config):
     async def ports_list(
         ctx: Context,
         query: Annotated[
-            dict | None,
+            dict,
             Field(
                 default=None,
                 description="""Query parameters for filtering ports:

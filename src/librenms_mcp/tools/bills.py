@@ -28,17 +28,17 @@ def register_bill_tools(mcp, config):
     async def bills_list(
         ctx: Context,
         period: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Optional: previous to list previous period bills",
             ),
         ] = None,
         ref: Annotated[
-            str | None, Field(default=None, description="Bill reference filter")
+            str, Field(default=None, description="Bill reference filter")
         ] = None,
         custid: Annotated[
-            str | None, Field(default=None, description="Customer ID filter")
+            str, Field(default=None, description="Customer ID filter")
         ] = None,
     ) -> dict:
         """
@@ -82,7 +82,7 @@ def register_bill_tools(mcp, config):
         ctx: Context,
         bill_id: Annotated[int, Field(ge=1, description="Bill ID")],
         period: Annotated[
-            str | None, Field(default=None, description="Optional period=previous")
+            str, Field(default=None, description="Optional period=previous")
         ] = None,
     ) -> dict:
         """

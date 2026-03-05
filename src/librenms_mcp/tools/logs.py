@@ -29,29 +29,29 @@ def register_logs_tools(mcp, config):
         ctx: Context,
         hostname: Annotated[str, Field(description="Device hostname or ID")],
         start: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Page number for pagination"),
         ] = None,
         limit: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Maximum number of results to return"),
         ] = None,
         from_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Start timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         to_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="End timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         sortorder: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Sort order: ASC or DESC"),
         ] = None,
     ) -> dict:
@@ -105,29 +105,29 @@ def register_logs_tools(mcp, config):
         ctx: Context,
         hostname: Annotated[str, Field(description="Device hostname or ID")],
         start: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Page number for pagination"),
         ] = None,
         limit: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Maximum number of results to return"),
         ] = None,
         from_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Start timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         to_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="End timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         sortorder: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Sort order: ASC or DESC"),
         ] = None,
     ) -> dict:
@@ -181,29 +181,29 @@ def register_logs_tools(mcp, config):
         ctx: Context,
         hostname: Annotated[str, Field(description="Device hostname or ID")],
         start: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Page number for pagination"),
         ] = None,
         limit: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Maximum number of results to return"),
         ] = None,
         from_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Start timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         to_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="End timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         sortorder: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Sort order: ASC or DESC"),
         ] = None,
     ) -> dict:
@@ -256,29 +256,29 @@ def register_logs_tools(mcp, config):
     async def logs_authlog(
         ctx: Context,
         start: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Page number for pagination"),
         ] = None,
         limit: Annotated[
-            int | None,
+            int,
             Field(default=None, description="Maximum number of results to return"),
         ] = None,
         from_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Start timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         to_ts: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="End timestamp filter (Unix timestamp or datetime string)",
             ),
         ] = None,
         sortorder: Annotated[
-            str | None,
+            str,
             Field(default=None, description="Sort order: ASC or DESC"),
         ] = None,
     ) -> dict:
@@ -330,7 +330,7 @@ def register_logs_tools(mcp, config):
     )
     async def logs_syslogsink(
         payload: Annotated[
-            dict[str, Any] | list[dict[str, Any]],
+            dict,
             Field(
                 description="JSON syslog message(s) to ingest into LibreNMS syslog storage. Accepts a single object or an array of objects."
             ),

@@ -28,27 +28,27 @@ def register_alert_tools(mcp, config):
     async def alerts_get(
         ctx: Context,
         state: Annotated[
-            int | None,
+            int,
             Field(
                 default=None,
                 description="Filter the alerts by state: 0 = ok, 1 = alert, 2 = ack. Optional.",
             ),
         ] = None,
         severity: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Filter the alerts by severity. Valid values: ok, warning, critical. Optional.",
             ),
         ] = None,
         alert_rule: Annotated[
-            int | None,
+            int,
             Field(
                 default=None, description="Filter alerts by alert rule ID. Optional."
             ),
         ] = None,
         order: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="How to order the output, default is by timestamp (descending). Can be appended by DESC or ASC to change the order. Optional.",
@@ -133,14 +133,14 @@ def register_alert_tools(mcp, config):
         ctx: Context,
         alert_id: Annotated[int, Field(ge=1, description="Alert ID to acknowledge")],
         note: Annotated[
-            str | None,
+            str,
             Field(
                 default=None,
                 description="Optional note to attach to the acknowledgement",
             ),
         ] = None,
         until_clear: Annotated[
-            bool | None,
+            bool,
             Field(
                 default=None,
                 description="If true, acknowledge until the alert clears. If false, acknowledge only this instance.",

@@ -28,13 +28,13 @@ def register_service_tools(mcp, config):
     async def services_list(
         ctx: Context,
         state: Annotated[
-            int | None,
+            int,
             Field(
                 default=None, description="Filter by state: 0=Ok, 1=Warning, 2=Critical"
             ),
         ] = None,
         service_type: Annotated[
-            str | None,
+            str,
             Field(
                 default=None, description="Filter by service type (SQL LIKE pattern)"
             ),
@@ -78,13 +78,13 @@ def register_service_tools(mcp, config):
         ctx: Context,
         hostname: Annotated[str, Field(description="Device hostname or ID")],
         state: Annotated[
-            int | None,
+            int,
             Field(
                 default=None, description="Filter by state: 0=Ok, 1=Warning, 2=Critical"
             ),
         ] = None,
         service_type: Annotated[
-            str | None,
+            str,
             Field(
                 default=None, description="Filter by service type (SQL LIKE pattern)"
             ),
